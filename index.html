@@ -36,58 +36,128 @@
         a:hover {
             text-decoration: underline;
         }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #eef4fb;
+        }
     </style>
 </head>
 <body>
     <h1>Privacy Policy – RadioAndroid</h1>
-    <p><strong>Last updated:</strong> November 2025</p>
+    <p><strong>Last updated:</strong> 14 July 2026</p>
 
-    <p>RadioAndroid is a free internet radio application. This Privacy Policy explains how the app handles user data.</p>
+    <p>RadioAndroid is an internet radio player for Android. This policy explains what the app does
+    with your data. The short version: <strong>the app does not collect, store or share any personal
+    data, and it has no user accounts, no advertising and no analytics.</strong></p>
 
-    <h2>1. Personal Data Collection</h2>
-    <p>RadioAndroid does not collect, store, or process any personal data from users.</p>
-    <p>The app does not require account creation, login, or access to personal information.</p>
+    <h2>1. Data the app collects</h2>
+    <p><strong>None.</strong> RadioAndroid does not collect, transmit or store any personal data. There
+    are no user accounts, no registration and no login. The app contains no advertising SDK, no
+    analytics SDK and no crash-reporting SDK.</p>
 
-    <h2>2. Data Used by the App</h2>
-    <p>RadioAndroid:</p>
+    <h2>2. Data stored on your device</h2>
+    <p>Everything the app saves stays on your device and is never uploaded anywhere:</p>
     <ul>
-        <li>does not collect analytics data</li>
-        <li>does not use tracking technologies</li>
-        <li>does not collect device identifiers</li>
-        <li>does not access location</li>
-        <li>does not request unnecessary permissions</li>
+        <li>your station list (name and stream address of each station you add);</li>
+        <li>your settings: equalizer presets, skins, VU meter mode, favourites, theme;</li>
+        <li>playlists and equalizer presets you export, saved in the public <code>Downloads/RadioAndroid</code>
+            folder so you can copy or share them yourself.</li>
     </ul>
-    <p>Only basic technical data handled by Android (such as network connection state) may be processed automatically by the system, but the app itself does not collect or store it.</p>
+    <p>Uninstalling the app removes its private data. Files you exported to <code>Downloads</code> stay
+    on your device until you delete them.</p>
 
-    <h2>3. Advertising</h2>
-    <p>RadioAndroid does not display any advertisements and does not use third-party ad networks.</p>
+    <h2>3. Internet connections the app makes</h2>
+    <p>The app connects to the internet in order to play radio and to show cover art. No personal data
+    is sent in any of these requests.</p>
 
-    <h2>4. Purchases and Payments</h2>
-    <p>The app contains only an optional external link to BuyCoffee (https://buycoffee.to/toevi).</p>
-    <p>RadioAndroid:</p>
+    <table>
+        <tr>
+            <th>Destination</th>
+            <th>When</th>
+            <th>What is sent</th>
+        </tr>
+        <tr>
+            <td>The radio station's own server (the stream address you added)</td>
+            <td>While a station is playing</td>
+            <td>A standard media stream request. The station's server sees your device's IP address, exactly as it would in any browser or radio app.</td>
+        </tr>
+        <tr>
+            <td>Apple iTunes Search API (<code>itunes.apple.com</code>)</td>
+            <td>When the stream reports the currently playing track</td>
+            <td>The artist and title of that track, to look up the album cover.</td>
+        </tr>
+        <tr>
+            <td>Deezer API (<code>api.deezer.com</code>)</td>
+            <td>Fallback, when iTunes has no match for the track</td>
+            <td>The artist and title of that track.</td>
+        </tr>
+        <tr>
+            <td>radio-browser.info</td>
+            <td>When looking for a station logo</td>
+            <td>The station name.</td>
+        </tr>
+        <tr>
+            <td>AudioAddict / RadioTunes API (<code>api.audioaddict.com</code>)</td>
+            <td>When resolving RadioTunes channel logos</td>
+            <td>Nothing but the request for the public channel list.</td>
+        </tr>
+        <tr>
+            <td>fmstream.org</td>
+            <td>Only when you open the built-in station browser</td>
+            <td>Nothing beyond a normal page request; the site opens in a web view so you can find and copy a stream address.</td>
+        </tr>
+    </table>
+
+    <p>These requests contain no identifiers, no account information and nothing about you — only the
+    name of a song or a station. As with every internet connection, the services above can see your
+    device's IP address. Their own privacy policies apply to what they do with the requests they receive.</p>
+
+    <h2>4. Permissions and why they are needed</h2>
     <ul>
-        <li>does not include in-app purchases,</li>
-        <li>does not process any payments inside the app,</li>
-        <li>does not access payment information.</li>
+        <li><strong>Internet / network state</strong> — to play streams and to detect when the connection drops so playback can be resumed automatically.</li>
+        <li><strong>Foreground service (media playback)</strong> — to keep the radio playing when the screen is off or you switch to another app.</li>
+        <li><strong>Notifications</strong> — to show the playback notification with Play/Stop and Next/Previous controls.</li>
+        <li><strong>Wake lock</strong> — to stop the device from suspending the network connection mid-stream.</li>
+        <li><strong>Storage (Android 8 and 9 only)</strong> — to save and load your playlists and equalizer presets in the <code>Downloads/RadioAndroid</code> folder. On Android 10 and newer this is done without any storage permission.</li>
     </ul>
-    <p>Any donation through BuyCoffee is handled entirely by the external service according to its own privacy policy.</p>
+    <p>The app does not request access to your location, contacts, camera, microphone or files outside
+    its own folder.</p>
 
-    <h2>5. Streaming Content</h2>
-    <p>The app only plays free internet radio stream URLs provided by public radio stations. No user data is collected during playback.</p>
+    <h2>5. Bluetooth and Android Auto</h2>
+    <p>The app publishes the station name, track title and cover art to the Android media session so
+    that your car head unit, Bluetooth device or Android Auto can display them and control playback.
+    This information stays on your device and its connected accessory; nothing is sent to the developer.</p>
 
-    <h2>6. Third-Party Services</h2>
-    <p>The app does not use analytics tools, or trackers.</p>
-    <p>Following the external BuyCoffee link is optional and handled outside the app.</p>
+    <h2>6. Diagnostic log</h2>
+    <p>The app can write a technical log (stream state, reconnects) to a file in the
+    <code>Downloads/RadioAndroid</code> folder. This is <strong>switched off by default</strong> and is
+    only created when a marker file named <code>DIAG</code> is placed there manually. The log stays on
+    your device — it is never uploaded — and contains no personal data.</p>
 
-    <h2>7. Children's Privacy</h2>
-    <p>RadioAndroid does not target children and does not collect any data, in compliance with Google Play requirements.</p>
+    <h2>7. Children</h2>
+    <p>The app is not directed at children and collects no data from anyone, including children.</p>
 
-    <h2>8. Changes to This Policy</h2>
+    <h2>8. Content responsibility</h2>
+    <p>You add the radio stations yourself. The developer does not host, control or curate any stream
+    and is not responsible for the content the stations broadcast. Please respect the copyright laws in
+    your country.</p>
+
+    <h2>9. Changes to This Policy</h2>
     <p>If the app functionalities change in the future, this Privacy Policy will be updated accordingly.</p>
 
-    <h2>9. Contact</h2>
+    <h2>10. Contact</h2>
     <p>If you have any questions about this Privacy Policy, you can contact the developer:</p>
-    <p><strong>Developer:</strong> Tomek Maslowski<br>
+    <p><strong>Developer:</strong> Tomasz Masłowski<br>
     <strong>Email:</strong> <a href="mailto:tomek.maselko@gmail.com">tomek.maselko@gmail.com</a></p>
 
 </body>
