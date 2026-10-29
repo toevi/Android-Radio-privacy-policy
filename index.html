@@ -54,7 +54,7 @@
 </head>
 <body>
     <h1>Privacy Policy – RadioAndroid</h1>
-    <p><strong>Last updated:</strong> 14 July 2026</p>
+    <p><strong>Last updated:</strong> 29 October 2026</p>
 
     <p>RadioAndroid is an internet radio player for Android. This policy explains what the app does
     with your data. The short version: <strong>the app does not collect, store or share any personal
@@ -92,6 +92,11 @@
             <td>A standard media stream request. The station's server sees your device's IP address, exactly as it would in any browser or radio app.</td>
         </tr>
         <tr>
+            <td>The same radio station's server, a second short request</td>
+            <td>Only when the stream does not deliver the current track title by itself</td>
+            <td>A short request for the stream's own track title (ICY metadata). Nothing beyond what the stream request above already sends.</td>
+        </tr>
+        <tr>
             <td>Apple iTunes Search API (<code>itunes.apple.com</code>)</td>
             <td>When the stream reports the currently playing track</td>
             <td>The artist and title of that track, to look up the album cover.</td>
@@ -107,6 +112,11 @@
             <td>The station name.</td>
         </tr>
         <tr>
+            <td>The station's own website (logo address listed for it in radio-browser.info)</td>
+            <td>When that logo is downloaded</td>
+            <td>Nothing but the request for the logo image.</td>
+        </tr>
+        <tr>
             <td>AudioAddict / RadioTunes API (<code>api.audioaddict.com</code>)</td>
             <td>When resolving RadioTunes channel logos</td>
             <td>Nothing but the request for the public channel list.</td>
@@ -114,7 +124,12 @@
         <tr>
             <td>fmstream.org</td>
             <td>Only when you open the built-in station browser</td>
-            <td>Nothing beyond a normal page request; the site opens in a web view so you can find and copy a stream address.</td>
+            <td>Nothing beyond a normal page request; the site opens in your web browser so you can find and copy a stream address.</td>
+        </tr>
+        <tr>
+            <td>Google connectivity check (<code>clients3.google.com/generate_204</code>)</td>
+            <td>When playback stalls on Wi-Fi, to check whether that Wi-Fi still reaches the internet before switching to mobile data</td>
+            <td>Nothing but an empty request; the answer carries no content.</td>
         </tr>
     </table>
 
@@ -125,6 +140,7 @@
     <h2>4. Permissions and why they are needed</h2>
     <ul>
         <li><strong>Internet / network state</strong> — to play streams and to detect when the connection drops so playback can be resumed automatically.</li>
+        <li><strong>Change network state</strong> — to move playback to mobile data when the Wi-Fi you are on stops reaching the internet, and back to Wi-Fi when it works again.</li>
         <li><strong>Foreground service (media playback)</strong> — to keep the radio playing when the screen is off or you switch to another app.</li>
         <li><strong>Notifications</strong> — to show the playback notification with Play/Stop and Next/Previous controls.</li>
         <li><strong>Wake lock</strong> — to stop the device from suspending the network connection mid-stream.</li>
@@ -132,24 +148,30 @@
     </ul>
     <p>The app does not request access to your location, contacts, camera, microphone or files outside
     its own folder.</p>
+    <p><strong>Clipboard.</strong> When you open fmstream.org from the station editor, the app reads the
+    clipboard on your return, only to pick up a stream address you copied there and fill it in. The
+    clipboard is not read at any other time, and its content never leaves your device.</p>
 
     <h2>5. Bluetooth and Android Auto</h2>
     <p>The app publishes the station name, track title and cover art to the Android media session so
     that your car head unit, Bluetooth device or Android Auto can display them and control playback.
     This information stays on your device and its connected accessory; nothing is sent to the developer.</p>
 
-    <h2>7. Children</h2>
+    <h2>6. Children</h2>
     <p>The app is not directed at children and collects no data from anyone, including children.</p>
 
-    <h2>8. Content responsibility</h2>
-    <p>You add the radio stations yourself. The developer does not host, control or curate any stream
-    and is not responsible for the content the stations broadcast. Please respect the copyright laws in
-    your country.</p>
+    <h2>7. Content responsibility</h2>
+    <p>RadioAndroid is a player for internet radio streams. It does not host, store or rebroadcast any
+    audio content. You add stations yourself by entering a public stream address; by doing so you
+    confirm that you have the right to listen to them and that you follow each operator's terms. The
+    rights to every stream belong to its operator or licensors. The app comes only with example
+    stations from SomaFM and Radio France, which you can delete at any time. The app is provided
+    "as is"; the developer is not responsible for third-party streams.</p>
 
-    <h2>9. Changes to This Policy</h2>
+    <h2>8. Changes to This Policy</h2>
     <p>If the app functionalities change in the future, this Privacy Policy will be updated accordingly.</p>
 
-    <h2>10. Contact</h2>
+    <h2>9. Contact</h2>
     <p>If you have any questions about this Privacy Policy, you can contact the developer:</p>
     <p><strong>Developer:</strong> Tomasz Masłowski<br>
     <strong>Email:</strong> <a href="mailto:tomek.maselko@gmail.com">tomek.maselko@gmail.com</a></p>
